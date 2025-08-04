@@ -1,36 +1,36 @@
 fx_version 'cerulean'
 game 'gta5'
-
-author 'CodeRaiders'
-description 'RaidCore - Base framework open source for FiveM using Ox resources'
-version '0.1.0'
-
 lua54 'yes'
 
-shared_scripts {
-    '@ox_lib/init.lua',
-    'config/config.lua',
-    'shared/functions.lua'
-}
-
-client_scripts {
-    'client/main.lua'
-}
-
-server_scripts {
-    '@oxmysql/lib/MySQL.lua',
-    'server/main.lua',
-    'core/moduleloader.lua',
-    'core/commands.lua'
-}
-
-files {
-    'locales/*.json'
-}
+name 'RaidCore'
+author 'Slashy5M'
+version '1.0.0'
+description 'Framework FiveM modulaire compatible OX'
 
 dependencies {
     'ox_lib',
-    'ox_inventory',
+    'oxmysql',
     'ox_target',
-    'oxmysql'
+    'ox_inventory',
 }
+
+client_scripts {
+    'imports.lua',
+    'client/main.lua',
+    'client/modules/**/*.lua'
+}
+
+server_scripts {
+    'imports.lua',
+    'server/main.lua',
+    'server/modules/**/*.lua'
+}
+
+shared_scripts {
+    'shared/config.lua',
+    'shared/utils.lua',
+    'shared/locales.lua',
+    '@ox_lib/init.lua'
+}
+
+provide 'raidcore'
