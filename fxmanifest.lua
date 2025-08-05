@@ -15,21 +15,17 @@ dependencies {
 }
 
 client_scripts {
-    'imports.lua',
     'client/main.lua',
-    'client/modules/**/*.lua'
+    'modules/**/*.lua'
 }
 
 server_scripts {
-    'imports.lua',
     'server/main.lua',
-    'server/modules/**/*.lua'
+    'modules/**/*.lua'
 }
 
 shared_scripts {
     'shared/config.lua',
-    'shared/utils.lua',
-    'shared/locales.lua',
     '@ox_lib/init.lua'
 }
 
